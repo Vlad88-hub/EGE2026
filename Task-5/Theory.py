@@ -51,3 +51,29 @@ num_hex = 'af8'
 print(int(num_bin, 2))
 print(int(num_tri, 3))
 print(int(num_hex, 16))
+
+# срезы
+test = 'Hello world!'
+# извлечение первых двух символов
+print(test[:2])
+# строка без первых двух символов
+print(test[2:])
+# извлечение последних двух символов
+print(test[-2:])
+# строка без последних двух символов
+print(test[:-2])
+
+# .append -> сохранание в список
+
+# сумма цифр числа
+# двоичное число
+num_1 = '1010'
+print(num_1.count('1'))
+
+# системы до 10 включительно
+num_2 = '823'
+print(sum(map(int, num_2)))
+
+# системы до 36 включительно
+num_3 = 'AF5'
+print(sum(map(lambda x: int(x, 36), num_3)))
