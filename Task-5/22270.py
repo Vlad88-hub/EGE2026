@@ -19,4 +19,3 @@ for N in range(1, 100000):
     if R < 598:
         ans.append(N)
 print(max(ans))
-
