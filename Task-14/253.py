@@ -45,3 +45,11 @@ print(convert(num2, 12))
 
 print(convert(num1, 13))
 print(convert(num2, 13))
+
+ans = []
+for sys in range(2, 36):
+    num_1 = convert(41, sys)
+    num_2 = convert(131, sys)
+    if num_1[-1:] == '2' and num_2[-1:] == '1':
+        ans.append(sys)
+print(min(ans))

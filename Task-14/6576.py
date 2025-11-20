@@ -7,11 +7,8 @@ def convert(num, sys):
         num //= sys
     return res[::-1]
 
-
-ans = []
-for N in range(1, 41):
-    R = convert(N, 2)
-    if R[-4:] == '1011':
-        ans.append(N)
-print(max(ans))
-
+num = 283**382 + 9**15 + 2**3
+num = convert(num, 14)
+B = num.count('b')
+C = num.count('c')
+print(B - C)
