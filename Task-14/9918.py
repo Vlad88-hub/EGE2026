@@ -7,4 +7,4 @@ for x in range(10, 67):
         num2 = 4*x**3 + 9*x**2 + y*x**1 + 6*x**0
         num = num1 + num2
         ans.append(num)
-print(len(ans))
+print(len(set(ans)))
