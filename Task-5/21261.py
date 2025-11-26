@@ -20,10 +20,13 @@ for N in range(1, 100000):
     R = int(R, 4)
     if R > 320:
         ans.append([R, N])
-print(min(ans))
 
-y = "1020031"
-print(y[:1] + '10' + y[3:], y.replace('1', '4'))
+mans = min(ans)[0]
+for i in ans:
+    if i[0] == mans:
+        print(i[1])
+
+
 
 
 
