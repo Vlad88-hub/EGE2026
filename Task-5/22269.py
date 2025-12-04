@@ -23,3 +23,4 @@ maxx = max(ans)[0]
 for i in ans:
     if i[0] == maxx:
         print(i[1])
+        break
