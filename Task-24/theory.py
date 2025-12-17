@@ -14,6 +14,7 @@ print(res2)
 data2 = 'BABABABABABABABA'
 pattern2 = r'BAB'
 matches = finditer(pattern2, data2) # Ищет все непересекающиеся совпадения регулярного выражения в строке. Она возвращает итератор, содержащий в себе match-объекты каждого найденного совпадения
+print(matches)
 print([m.group() for m in matches])
 
 matches2 = findall(pattern2, data2) # Ищет все непересекающиеся совпадения регулярного выражения в строке. В отличие от finditer(), возвращает список строк или кортежей, содержащих найденные совпадения.
@@ -31,8 +32,8 @@ print(matches3)
 # \b – граница слова;
 # \В – НЕ граница слова
 
-data4 = 'ghgfhgfhgfhKOT ghgfhgfhgfhgfhgfhKAThgfhgffggfhfghgffgh KIT'
-pattern4 = r'K/DT'
+data4 = 'ghgfhgfhgfhKOOT ghgfhgfhgfhgfhgfhKAThgfhgffggfhfghgffgh KIT'
+pattern4 = r'K\bT'
 print(sub(pattern4, 'MGER', data4))
 print(findall(pattern4, data4))
 
@@ -58,3 +59,32 @@ print(findall(pattern4, data4))
 # Отрицательная опережающая проверка - (?!...)
 # Положительная ретроспективная проверка - (?<=...)
 # Отрицательная ретроспективная проверка - (?<!...)
+
+# работа с файлами
+
+# функция на работу с файлом
+# print('hello', file=open('test.txt', 'w'))
+# file = open('test.txt', 'r')
+#
+# # readline() - метод дли считывания одной строки из файла.
+# # Возвращает строку.
+# # Возвращает str
+# data1 = file.readline()
+# data2 = file.readline()
+# print(data1)
+#
+# # readlinse() - метод для считывания всех строк файла.
+# # Возвращает list
+# data3 = file.readlines()
+#
+# # read() - это метод для считывания всего файла целиком в одну строку.
+# # Возвращает str
+# data4 = file.read()
+#
+# # close() - метод для закрытия потока. Пишется после работы с файлом
+# file.close()
+
+# конструкция with as позволяет автоматически закрывать поток при выходе из нее
+with open('test.txt') as file:
+    data = file.readlines()
+print(data)
