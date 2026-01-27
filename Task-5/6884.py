@@ -1,6 +1,7 @@
 ans = []
 for N in range(1, 100000):
     R = bin(N)[2:]
+    print(R)
     if N % 2 == 0:
         R = '1' + R + '0'
     else:
