@@ -16,6 +16,19 @@ def fact(num):
 
 cnt = 0
 for n in range(5_000_012, 10**20, 100):
-    F = fact(n)
+    Fa = fact(n)
+    F = ''
+    ans = []
+    for i in Fa:
+        F += str(i) + '0'
+    F = F.split('0')
+    for i in set(Fa):
+        if F.count(str(i)) == 5:
+            ans += [i]
+    if ans:
+        print(n, min(ans))
+        cnt += 1
+        if cnt == 5:
+            break
     
 
