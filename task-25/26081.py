@@ -1,10 +1,10 @@
 def summ(num):
-    for a in range(113, 999999 - 3 + 1, 2):
-        if a % 113 == 0:
-            for x in range(1, 13):
-                if a + 3**x == num:
-                    return x
+    for a in range(113, 10**6, 113*2):
+        for x in range(1, 13):
+            if a + 3 ** x == num:
+                return x
     return 0
+
 
 cnt = 0
 for n in range(111111, 1000000):
