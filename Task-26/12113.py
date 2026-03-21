@@ -4,13 +4,14 @@ with open(r'.\files\26_12113.txt') as file:
 
 boxes = sorted(boxes, reverse=True)
 
-last_box = max(boxes)
-u = last_box % 2 == 0
-cnt = 1
-for box in boxes:
-    if last_box - box >= 7 and (box % 2 == 0) != u:
-        cnt += 1
-        last_box = box
-        u = box % 2 == 0
+red = [max(i for i in boxes if i % 2 == 1)]
+blue = [max(i for i in boxes if i % 2 == 0)]
 
-print(cnt, last_box)
+for box in boxes:
+    if red[-1] % 2 != box % 2 and red[-1] - box >= 7:
+        red.append(box)
+    if blue[-1] % 2 != box % 2 and blue[-1] - box >= 7:
+        blue.append(box)
+
+print(len(red), red[-1])
+print(len(blue), blue[-1])
