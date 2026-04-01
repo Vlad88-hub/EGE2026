@@ -1,0 +1,15 @@
+from functools import lru_cache
+
+def f(n):
+    return 2 * (g(n - 3) + 8)
+
+@lru_cache(None)
+def g(n):
+    if n < 10: return 2 * n
+    return g(n - 2) + 1
+
+for i in range(10, 15548):
+    g(i)
+
+print(f(15_548))
+print(15_588)
