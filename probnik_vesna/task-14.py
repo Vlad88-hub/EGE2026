@@ -1,5 +1,5 @@
 ans = []
-for x in range(0, 9430):
+for x in range(1, 9431):
     cnt_0 = 0
     num = 39**483 + 39**235 - x
     while num:
