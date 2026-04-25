@@ -9,7 +9,7 @@ def center(cluster):
 
 with open(r'./files/27A_18625.txt') as file:
     dots = [list(map(float, i.replace(',','.').split())) for i in file]
-
+print(dots)
 eps = 1
 clusters = []
 

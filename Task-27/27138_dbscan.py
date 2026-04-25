@@ -71,3 +71,45 @@ max_res = max(res_1_max,res_2_max,res_3_max)[1]
 
 print(max_abs * 10_000)
 print((max_res[0] + max_res[1])*10_000)
+
+###############################################################
+
+from math import dist
+
+def center(cluster):
+    res = []
+    for dot in cluster:
+        sum_dist = sum(dist(dot, d) for d in cluster)
+        res.append([sum_dist, dot])
+    return min(res)[1]
+
+with open(r'.\files\27B_27138.txt') as file:
+    dots = [list(map(float, i.replace(',', '.').split())) for i in file]
+
+eps = 2
+clusters = []
+while dots:
+    cluster = [dots.pop()]
+    for dot in cluster:
+        for d in dots.copy():
+            if dist(dot, d) < eps:
+                cluster.append(d)
+                dots.remove(d)
+    if len(cluster) > 1:
+        clusters.append(cluster)
+
+clusters = sorted(clusters, key=len)
+B1 = max(clusters[len(clusters) // 2])[0]
+
+res = []
+for i in range(len(clusters)):
+    current_cluster = clusters[i]
+    other_clusters = clusters[:i] + clusters[i + 1:]
+    other_clusters = [d for i in range(len(other_clusters)) for d in other_clusters[i]]
+    for dot in current_cluster:
+        sum_dist = sum(dist(dot, d) for d in other_clusters)
+        res.append([sum_dist, dot])
+
+B2 = sum(max(res)[1])
+
+print(abs(B1) * 10_000, abs(B2) * 10_000)
