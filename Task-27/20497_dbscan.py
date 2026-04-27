@@ -10,7 +10,7 @@ def anticenter(cluster):
 with open(r'./files/27.19.A_20497.txt') as file:
     dots = [list(map(float, i.replace(',', '.').split())) for i in file]
 
-eps = 0.5
+eps = 0.4
 clusters = []
 
 while dots:

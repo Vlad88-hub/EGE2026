@@ -43,7 +43,6 @@ center_2 = center(clusters[2])
 
 print(dist(center_2, center_1)*10_000)
 
-
 ################################################
 
 from itertools import combinations
