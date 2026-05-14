@@ -1,12 +1,17 @@
 with open(r'../files/24_21717.txt') as file:
     data = file.readline()
 
-data = data.split('RSQ')
+data = data.replace('RSQ', 'Rsq rsQ')
+data = data.split()
 
 ans = 10000000
-for i in range(len(data) - 130):
-    line = 'RSQ'.join(data[i:i+130])
-    pos_Q = data[i+129].find('Q')
-    ans = min(ans, len(line) + 3 + pos_Q)
+for i in range(len(data) - 129):
+    line = ''.join(data[i:i+129]).replace('sqrs', 'S')
+    cnt = 0
+    for j in data[i+129][3:]:
+        cnt += 1
+        if j not in 'Qq':
+            break
+    ans = min(ans, len(line) + cnt)
 
 print(ans)
