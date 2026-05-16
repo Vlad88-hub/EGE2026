@@ -40,3 +40,4 @@ def f(x):
 
 for A in range(1, 1000):
     if all(f(x) for x in range(1, 1000)):
+        print(A)

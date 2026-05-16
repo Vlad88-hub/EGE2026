@@ -1,7 +1,7 @@
 from itertools import *
 
 def f(x, y, z, w):
-    return not(y <= x) or (z <= w) or not z
+    return
 
 for i in product((0, 1), repeat=7):
     table = [
