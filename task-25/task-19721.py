@@ -10,5 +10,5 @@ def f(num):
 for n in range(178965, 178983):
     F = f(n)
     if F:
-        print(sorted(F, reverse=True))
+        print(*sorted(F, reverse=True))
 
