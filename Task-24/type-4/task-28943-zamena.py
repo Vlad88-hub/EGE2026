@@ -12,5 +12,3 @@ for i in range(len(data) - 24):
     # if line_end:
     #     while line[0] not in 'AEIOUY':
 
-
-
