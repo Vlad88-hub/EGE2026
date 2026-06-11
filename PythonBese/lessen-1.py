@@ -30,6 +30,18 @@ print(my_set, type(my_set))
 #словарь / dictionary / dict
 my_dict = { 'neme' :'larisa',  'age' :91, 'lastneme': 'Nesterova' }
 print(my_dict, type(my_dict))
+my_dict['name'] = '12'
+my_dict['age'] += 12
+
+# методы
+print(my_dict.values())
+print(my_dict.keys())
+print(my_dict.items())
+
+# циклы с словарями
+for i in my_dict: # my_dict.value()
+    print(i)
+    print(my_dict[i])
 
 # Логический тип данных / boolean / bool
 my_bool1 = True

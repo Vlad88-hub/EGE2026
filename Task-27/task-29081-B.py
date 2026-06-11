@@ -24,6 +24,6 @@ all_stars = [stars_1,stars_2,stars_3]
 
 min_dist_stars = min(dist(s1, s2) for cl1, cl2 in combinations(all_stars, 2) for s1 in cl1 for s2 in cl2)
 
-cl_dist = [dist(s1, s2) for cl in all_stars for s1, s2 in combinations(cl, 2)]
+cl_dist = [dist(s1, s2) for cl1, cl2 in combinations(all_stars, 2) for s1 in cl1 for s2 in cl2]
 
 print(min_dist_stars * 10_000, (sum(cl_dist)/len(cl_dist)) * 10_000)
