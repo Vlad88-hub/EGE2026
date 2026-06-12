@@ -19,4 +19,3 @@ for i in range(len_max_bids, len(bids)):
         max_bids.append(bids[i])
 
 print(len_max_bids, N - cnt_bid)
-
