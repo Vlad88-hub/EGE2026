@@ -12,7 +12,7 @@ def fact(num):
     if num > 2:
         d.append(num)
 
-    if len(set(d)) == 2:
+    if len(d) == len(set(d)) == 2:
         return d
     return []
 
@@ -27,11 +27,10 @@ cnt = 0
 for n in range(3_700_001, 10**10):
     F = fact(n)
     if F:
-        cnt_prime = 0
-        for i in range(F[0], F[1] + 1):
+        for i in range(F[0] + 1, F[1]):
             if is_prime(i):
-                cnt_prime += 1
-        if cnt_prime == 2:
+                break
+        else:
             print(n, sum(F))
             cnt += 1
             if cnt == 5:
